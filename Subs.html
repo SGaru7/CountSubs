@@ -14,17 +14,8 @@
     </style>
 </head>
 <body>
-    <div id="subscriber-count">Loading...</div>
-    <script>
-        async function fetchSubscriberCount() {
-            const response = await fetch('https://livecounts.io/your-url-for-subscriber-count'); // Reemplaza con la URL del contador en Livecounts.io
-            const text = await response.text();
-            const subscriberCount = text.match(/<span id="value">(\d+)<\/span>/)[1]; // Ajusta este selector según sea necesario
-            document.getElementById('subscriber-count').innerText = subscriberCount;
-        }
-
-        fetchSubscriberCount();
-        setInterval(fetchSubscriberCount, 60000); // Actualiza cada minuto
-    </script>
+    <div id="subscriber-count">
+        <iframe src="https://livecounts.io/embed/youtube-live-subscriber-counter/UC3WSIVhlCnBG88B7piMAygg" width="300" height="100" frameborder="0"></iframe>
+    </div>
 </body>
 </html>
