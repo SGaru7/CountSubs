@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriber Count</title>
+    <style>
+        #subscriber-count {
+            font-size: 2em;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="subscriber-count">Loading...</div>
+    <script>
+        async function fetchSubscriberCount() {
+            const response = await fetch('https://livecounts.io/your-url-for-subscriber-count'); // Reemplaza con la URL del contador en Livecounts.io
+            const text = await response.text();
+            const subscriberCount = text.match(/<span id="value">(\d+)<\/span>/)[1]; // Ajusta este selector según sea necesario
+            document.getElementById('subscriber-count').innerText = subscriberCount;
+        }
+
+        fetchSubscriberCount();
+        setInterval(fetchSubscriberCount, 60000); // Actualiza cada minuto
+    </script>
+</body>
+</html>
