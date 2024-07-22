@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscriber Count</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
         #subscriber-count {
-            font-size: 2em;
-            color: black;
-            text-align: center;
-            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div id="subscriber-count">
-        <iframe src="https://livecounts.io/embed/youtube-live-subscriber-counter/UC3WSIVhlCnBG88B7piMAygg" width="300" height="100" frameborder="0"></iframe>
-    </div>
+    <iframe id="subscriber-count" src="https://livecounts.io/embed/youtube-live-subscriber-counter/UC3WSIVhlCnBG88B7piMAygg"></iframe>
 </body>
 </html>
